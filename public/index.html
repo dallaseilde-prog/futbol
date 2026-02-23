@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FIFA 3D — Antigravity Edition</title>
+    <meta name="description" content="Juego de fútbol 3D con Three.js — 11 vs 11 con IA, físicas de balón y múltiples cámaras">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('error', function (e) {
+            alert("Error: " + e.message + " in " + e.filename + " Line: " + e.lineno);
+        });
+        window.addEventListener('unhandledrejection', function (e) {
+            alert("Unhandled Promise Rejection: " + e.reason);
+        });
+    </script>
+
+    <div id="game-ui">
+        <div id="scoreboard">
+            <span class="team-name">JUGADOR</span>
+            <span id="blue-score" class="team-score">0</span>
+            <span class="score-separator">—</span>
+            <span id="red-score" class="team-score">0</span>
+            <span class="team-name">CPU</span>
+        </div>
+        <div id="camera-label"></div>
+        <div id="goal-announcer">¡GOOOOL!</div>
+        <div id="bottom-panel">
+            <div id="stamina-bar">
+                <span class="stamina-label">SPRINT</span>
+                <div id="stamina-track"><div id="stamina-fill"></div></div>
+            </div>
+            <div id="controls-help">
+                <strong>⚽ CONTROLES</strong>
+                <span class="key">W</span> <span class="key">A</span> <span class="key">S</span> <span class="key">D</span> Mover<br>
+                <span class="key">SHIFT</span> Sprint<br>
+                <span class="key">ESPACIO</span> Disparo<br>
+                <span class="key">J</span> Pase <span class="key">K</span> Tackle / Cambiar<br>
+                <span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span> Cambiar cámara
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
